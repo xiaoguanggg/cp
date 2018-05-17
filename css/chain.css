@@ -1,0 +1,243 @@
+.node-box{
+	position: relative;
+	max-width: 1200px;
+	margin:0 auto;
+}
+table,tbody,th,tr,.tr-title{
+	display: inline-block;
+	width: 100%;
+}
+tbody{
+    box-shadow: 0 0 3px 2px rgba(0,0,0,.05);
+}
+.fl{
+	float: left;
+	width: 50%;
+	padding: 0 1%;
+}
+.fr{
+	float: right;
+	color: #333;
+	font-size: 14px;
+	font-weight: normal;
+}
+.fz{
+	color: #333;
+	font-size: 14px;
+	font-weight: normal;
+}
+.fw{
+	 color: #f93;
+    font-weight: bold;
+    font-size: 18px;
+}
+#pos-box .fz{
+	font-weight: bold;
+	font-size: 18px
+}
+.node-dec table{
+	padding-top:100px;
+}
+.node-dec{
+	padding:0 1%;
+}
+.tr-title{
+  width: 100%;
+  background: #E6E9ED;
+  height: 40px;
+  line-height: 40px;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  padding:0 15px;
+}
+.tr-dec{
+/*    padding-left: 15px;
+    padding-right: 15px;*/
+    padding:15px;
+}
+.node-dec .tr-dec{
+   height: 80px;
+   line-height: 50px;
+}
+.node-dec .tr-dec td:nth-child(1),
+.node-dec .tr-dec td:nth-child(3){
+	width: 10%;
+}
+.node-dec .tr-dec td:nth-child(2),
+.node-dec .tr-dec td:nth-child(4){
+	width: 40%;
+}
+#user-dec,#chain,#block-box,#vote-box{
+	margin-top:30px;
+	margin-bottom: 30px
+}
+.user-name,.user-addr{
+	font-size: 20px;
+	font-weight: 600;
+	color: #f93
+}
+.user-dec td,
+.chain-dec td,
+.user-box td{
+	display: block;
+	padding-top:10px;
+}
+
+.user-dec td span.fr,
+.chain-dec td span.fr,
+.user-box td span.fr{
+	float: right;
+	font-weight: normal;
+	color: #333;
+	font-size: 14px
+}
+#user-dec td:nth-child(even),#chain td span:nth-child(even){
+	height: 60px;
+	line-height: 50px;
+	color: #f93;
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f9f9f9;
+}
+#use-box td:nth-child(even){
+	height: 60px;
+	line-height: 50px;
+	color: #f93;
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f9f9f9;
+}
+.user-dec td:last-child,.chain-dec td:last-child,.user-box td:last-child{
+  border-bottom: none !important
+}
+.user-box table{
+	float: left;
+	width: 33.33%;
+	padding:0 1%;
+}
+p.fz span{
+	color: #f93;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px
+}
+#chain td,#chain_dec td{
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+#chain td:nth-child(5),#chain td:nth-child(6),
+#chain_dec td:nth-child(5),#chain_dec td:nth-child(6){
+	margin-bottom: 10px;
+}
+#chain td:nth-child(5) span,#chain td:nth-child(6) span,
+#chain_dec td:nth-child(5) span,#chain_dec td:nth-child(6) span{
+	border-bottom: none !important
+}
+#chain td span:nth-child(1),
+#chain_dec td span:nth-child(1){
+	display: block;
+	height: 30px;
+}
+#chain td span:nth-child(2),
+#chain_dec td span:nth-child(2){
+	display: block;
+	height: 50px;
+	line-height: 50px;
+
+}
+#chain_dec{
+	margin-bottom: 30px;
+	padding:100px 1% 0;
+}
+.pos-row-box,.block-box,.vote-box{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.pos-row ul,.chain_addr ul {
+    box-shadow: 0 0 3px 2px rgba(0,0,0,.05);
+}
+.pos-row ul li.node-title-box{
+	width: 25%
+}
+.pos-row ul li {
+    float: left;
+    width: 25%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height:240px;
+    line-height: 60px;
+}
+.chain_addr ul li{
+	float: left;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height:120px;
+    line-height: 60px;
+}
+.chain_addr ul li:nth-child(1){
+	width: 30%;
+}
+.chain_addr ul li:nth-child(2){
+	width: 70%;
+	text-align: left;
+}
+.pos-row ul li span {
+    display: block;
+}
+#block-lists,#vote-lists{
+	padding: 0 1%;
+}
+#block-lists th{
+	float: left;
+	width: 25%;
+}
+#vote-lists th{
+	float: left;
+	width: 16.66%
+}
+.block-tr{
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px
+}
+#block-lists .tr-dec,#vote-lists .tr-dec{
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	padding:0 15px;
+}
+#block-lists .tr-dec td{
+	width: 25%;
+	float: left;
+}
+#vote-lists .tr-dec td{
+	width: 16.66%;
+	float: left;
+}
+#block-lists .search{
+	position: absolute;
+	right: 0
+}
+#block-lists .search input{
+	border:1px solid #f9f9f9;
+	height: 30px;
+	border-radius: 15px;
+	padding-left: 30px;
+	width: 80%
+}
+#block-lists .search img{
+    z-index: 10;
+    position: relative;
+    left:30px;
+    width: 20px
+}
+.chain_addr{
+	padding:100px 1% 0;
+}

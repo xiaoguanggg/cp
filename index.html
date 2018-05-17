@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>链池</title>
+	<link rel="stylesheet" href="css/main.css?v=1.0.1">
+	<link rel="stylesheet" href="css/comment.css?v=1.0.1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<style type="text/css">
+
+</style>
+<body>
+<nav>
+	<div class="nav-box clearfix">
+		<!-- logo -->
+		<div class="nav-logo">
+			<a href="###"><!-- <img src="img/logo.png" alt=""> --><span class="line"></span>Chainpool</a>
+		</div>
+
+		<!-- 控制menu -->
+		<div class="nav-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<!-- 菜单 -->
+		<ul class="nav-list">
+			<li><a href="" class="active">首页</a></li>
+			<li><a href="notice.html">公告</a></li>
+			<li><a href="">团队</a></li>
+			<li>
+				<a href="" class="">语言<div class="carect"></div></a>
+				<ul class="menu">
+					<li><a href="">中文</a></li>
+					<li><a href="">English</a></li>
+					<li><a href="">韩文</a></li>
+					<li><a href="">日文</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+<!-- 轮播 -->
+<div class="container-box">
+    <ul class="content">
+        <li class="current">
+            <a href="#">
+                <img src="http://www.jq22.com/img/cs/500x500-4.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://www.jq22.com/img/cs/500x500-1.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://www.jq22.com/img/cs/500x500-2.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://www.jq22.com/img/cs/500x500-5.png" alt="">
+            </a>
+        </li>
+    </ul>
+    <ul id="circle">
+        <li class="current1"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<!-- pos -->
+<div id="pos" class="pos">
+	<div class="container">
+		<div class="title">
+			<h3>Pos 节点</h3>
+			<p>pos node</p>
+		</div>
+		<div class="pos-row clearfix"  id="pos-row">
+			<!-- <div class="col-md-12">
+				 <ul class="clearfix">
+				 	<li class="node">
+				 		<img src="http://www.eosforce.io/imgs/newlogotm.png">
+				 		<span class="node-title chainName">eos</span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">节点排名</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">得票数</span>
+				 		<span class="voteToken"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">昨日出块数</span>
+				 		<span class="ydBlock"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">昨日奖励</span>
+				 		<span class="ydAward"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">用户数</span>
+				 		<span class="account"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">年化利率</span>
+				 		<span class="yrBonusScale"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">万币收益</span>
+				 		<span class="profit"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">币价</span>
+				 		<span class="price"></span>
+				 	</li>
+				 </ul>
+			</div>
+			<div class="col-md-12">
+				 <ul class="clearfix">
+				 	<li class="node">
+				 		<img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:50px;height: 50px">
+				 		<span class="node-title">eos</span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">节点排名</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">得票数</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">昨日出块数</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">昨日奖励</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">用户数</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">年化利率</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">万币收益</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">币价</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 </ul>
+			</div>
+			<div class="col-md-12">
+				 <ul class="clearfix">
+				 	<li class="node">
+				 		<img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:50px;height: 50px">
+				 		<span class="node-title">eos</span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">节点排名</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">得票数</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">昨日出块数</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">昨日奖励</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">用户数</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">年化利率</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">万币收益</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 	<li class="node">
+				 		<span class="">币价</span>
+				 		<span class="node-rank"></span>
+				 	</li>
+				 </ul>
+			</div>
+			<div class="col-md-12">
+				 <ul class="clearfix">
+				 	 <li>未上线</li>
+				 </ul>
+			</div> -->
+		</div>
+	</div>
+</div>
+<!-- server -->
+<div id="server" class="server clearfix">
+	<div class="servery-row">
+		<div class="col-md-3 server-list">
+			<img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:100px;height: 100px">
+			<p><b>去中心化</b></p>
+			<p>采用智能合约自动管理</p>
+		</div>
+		<div class="col-md-3 server-list">
+			<img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:100px;height: 100px">
+			<p><b>去中心化</b></p>
+			<p>采用智能合约自动管理</p>
+		</div>
+		<div class="col-md-3 server-list">
+			<img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:100px;height: 100px">
+			<p><b>去中心化</b></p>
+			<p>采用智能合约自动管理</p>
+		</div>
+		<div class="col-md-3 server-list">
+			<img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:100px;height: 100px">
+				<p><b>去中心化</b></p>
+			<p>采用智能合约自动管理</p>
+		</div>
+	</div>
+</div>
+<!-- notice -->
+<div id="notice" class="notice clearfix">
+	<div class="container">
+		<div class="title">
+			<h3>公告</h3>
+			<p>notice</p>
+		</div>
+		<div class="notice-row clearfix">
+			<div class="col-md-12">
+				<ul class="notice-box">
+					<li>
+						<span class="time">2018-05-14 8:00</span>
+						<p>这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,</p>
+						<a href="">查看详情</a>
+					</li>
+					<li>
+						<span class="time">2018-05-14 8:00</span>
+						<p>这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,</p>
+						<a href="">查看详情</a>
+					</li>
+					<li>
+						<span class="time">2018-05-14 8:00</span>
+						<p>这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,这是 一条重要公告,</p>
+						<a href="">查看详情</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="footer-row clearfix">
+		 <div class="col-md-3">
+		 	<a class="footer-logo"><span class="line"></span>Chainpool</a>
+		 	<p>这是 合同是是个大概大概大概担任公司儿童诗歌但如果当然更多手机   是担任公司额是</p>
+		 </div>
+		 <div class="col-md-3">
+		 	<div class="title-box"><span>产品</span></div>
+		 	<ul class="footer-nav">
+		 		<li><a href="">gg</a></li>
+		 		<li><a href="">gg</a></li>
+		 		<li><a href="">gg</a></li>
+		 	</ul>
+		 </div>
+		 <div class="col-md-3">
+		 	<div class="title-box"><span>公司</span></div>
+		 	<ul class="footer-nav">
+		 		<li><a href="">关于我们</a></li>
+		 		<li><a href="">加入我们</a></li>
+		 		<li><a href="">联系我们</a></li>
+		 	</ul>
+		 </div>
+		 <div class="col-md-3">
+		 	<div class="title-box"><span>帮助</span></div>
+		 	<ul class="footer-nav">
+		 		<li><a href="">费率配置</a></li>
+		 		<li><a href="">常见问题</a></li>
+		 		<li><a href="">公告</a></li>
+		 	</ul>
+		 </div>
+	</div>
+</footer>
+</body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/main.js?v=1.0.8"></script>
+</html>
