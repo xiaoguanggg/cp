@@ -283,10 +283,91 @@ function ajaxgetAccount(){
    contentType: 'application/json;charset=utf-8',
    url:"http://192.168.1.179:8888/chain/getAccount",
    data: JSON.stringify({
-           blockNumber: 100
+         "account" : "huobi.pro"
         }),
    success:function(data){
-       console.log(data)
+       console.log(data);
+       var account = data.data.account;
+       var voteHistory = data.data.voteHistory;
+       console.log(account);
+       console.log(voteHistory);
+       var table6 = "";
+           table6 += ' <ul class="clearfix">\
+                          <li class="">\
+                            <img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:60px;height: 60px">\
+                            <span class="fw">eos</span>\
+                          </li>\
+                          <li class="">\
+                            <span class=""><label style="margin-right:10px">链用户名 :</label>'+ account.nodeName +'</span>\
+                            <span class=""><label style="margin-right:10px">链地址 :</label>'+ account.address +'</span>\
+                          </li>\
+                        </ul>'
+       $("#chain_addr").append(table6);
+       // 投票
+       var  table7 = "";
+            table7 += '<table border="0" id="vote-lists">\
+                          <tr class="block-tr" style="position: relative;">\
+                            <th>投票历史</th>\
+                          </tr>\
+                          <tr class="tr-title">\
+                            <th>时间</th>\
+                            <th>开始抵押</th>\
+                            <th>接触抵押</th>\
+                            <th>节点投票</th>\
+                            <th>提现利息</th>\
+                            <th>币量</th>\
+                          </tr>';
+            for(var i=0;i<voteHistory.length;i++){
+
+              //console.log(item[i].name);
+
+                  table7 += '<tr class="tr-dec">\
+                    <td style="padding-left:15px">' + voteHistory[i].timestamp+ '</td>\
+                    <td>' + voteHistory[i].stakedBalance + '</td>\
+                    <td>' + voteHistory[i].stakingBalance + '</td>\
+                    <td>' + voteHistory[i].voteToken + '</td>\
+                    <td>' + voteHistory[i].profit + '</td>\
+                    <td>' + voteHistory[i].supply + '</td><tr>';
+          }
+          table7 += '</table>';
+          $("#vote-box").append(table7);
+
+        // 信息
+        var table_box = "";
+            table_box += '<table border="0">\
+                          <tr class="tr-title">\
+                            <th>用户信息</th>\
+                          </tr>\
+                          <tr class="tr-dec">\
+                            <td>用户名</td>\
+                            <td class="fw">'+ account.nodeName +'</td>\
+                            <td>用户地址</td>\
+                            <td class="fw">'+ account.address +'</td>\
+                          </tr>\
+                          </table>\
+                            <table border="0">\
+                          <tr class="tr-title">\
+                            <th>收益信息</th>\
+                          </tr>\
+                          <tr class="tr-dec">\
+                            <td>历史总收益</td>\
+                            <td class="fw">'+ account.profit +'</td>\
+                            <td>未提取收益</td>\
+                            <td class="fw" style="height:60px">'+ account.receiveProfit +'</td>\
+                          </tr>\
+                          </table>\
+                          <table border="0">\
+                          <tr class="tr-title">\
+                            <th>动态信息</th>\
+                          </tr>\
+                          <tr class="tr-dec">\
+                            <td>最新总余额</td>\
+                            <td class="fw">'+ account.balance +'</td>\
+                            <td>最新抵押币量</td>\
+                            <td class="fw" style="height:60px">'+ account.stakedBalance +'</td>\
+                          </tr>\
+                          </table>'
+         $("#user-box").append(table_box);
    },
     error: function(error) {
           console.log(error); //打印服务端返回的数据(调试用)
@@ -315,10 +396,10 @@ $(function(){
     $(".addr-search").keypress(function (e) { 
          var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;  
          if (keyCode == 13){  
-                alert("响应键盘的enter事件");
-                window.location.href = "/node.html";
-                window.reload();
-                ajaxgetAccount()
+              alert("响应键盘的enter事件");
+              window.location.href = "/cp/node.html";
+              window.reload();
+              ajaxgetAccount()
           }  
     }); 
   })

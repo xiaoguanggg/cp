@@ -30,16 +30,18 @@ tbody{
 	 color: #f93;
     font-weight: bold;
     font-size: 18px;
+     word-wrap:break-word; 
+     word-break:normal; 
 }
 #pos-box .fz{
 	font-weight: bold;
 	font-size: 18px
 }
-.node-dec table{
+/*.node-dec table{
 	padding-top:100px;
-}
+}*/
 .node-dec{
-	padding:0 1%;
+	padding:100px 1% 0;
 }
 .tr-title{
   width: 100%;
@@ -199,8 +201,20 @@ p.fz span{
 	width: 25%;
 }
 #vote-lists th{
+	width: 14%;
 	float: left;
-	width: 16.66%
+}
+#vote-lists th:first-child{
+	float: left;
+	width: 30%;
+}
+#vote-lists .tr-dec td{
+	width: 14%;
+	float: left;
+}
+#vote-lists .tr-dec td:first-child{
+	width: 30%;
+	float: left;
 }
 .block-tr{
     height: 50px;
@@ -217,26 +231,34 @@ p.fz span{
 	width: 25%;
 	float: left;
 }
-#vote-lists .tr-dec td{
-	width: 16.66%;
-	float: left;
-}
-#block-lists .search{
+
+ .search{
 	position: absolute;
 	right: 0
 }
-#block-lists .search input{
+ .search input{
 	border:1px solid #f9f9f9;
 	height: 30px;
 	border-radius: 15px;
 	padding-left: 30px;
 	width: 80%
 }
-#block-lists .search img{
+ .search img{
     z-index: 10;
     position: relative;
     left:30px;
     width: 20px
+}
+/*.search.addr-search{
+	position: relative;
+}*/
+.search.addr-search input{
+    border: 1px solid #f9f9f9;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 30px;
+    width: 80%;
+    margin-top: 5px;
 }
 .chain_addr{
 	padding:100px 1% 0;
