@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>链池</title>
 	<link rel="stylesheet" href="css/comment.css?v=1.0.1">
-	<link rel="stylesheet" href="css/chain.css?v=1.0.0">
+	<link rel="stylesheet" href="css/chain.css?v=1.0.1">
 <!-- 	<link rel="stylesheet" href="css/main.css?v=1.0.0"> -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
@@ -46,7 +46,7 @@
     <div id="node-dec" class="node-dec">
 		<div class="search addr-search">
 			<img src="./img/search.svg">
-			<input type="text" name="search" placeholder="搜索用户名/地址">
+			<input type="text" name="search" placeholder="搜索用户名/地址" id="addrkeyword">
 		</div>
 		<!-- <table border="0">
 			<tr class="tr-title">
@@ -146,6 +146,13 @@
 	</div>
 </div>
 <div id="block-box" class="block-box clearfix">
+	    <div class="block-search-box">
+	    	<div class="search block-search">
+				<img src="./img/search.svg">
+				<input type="text" name="search" placeholder="区块查询(数字)" id="block-search" oninput="javascript:this.value=this.value.replace(/[^\d]/g,'')">
+			</div>
+	    </div>
+	  
 	<!-- <table border="0" id="block-lists">
 		<tr class="block-tr" style="position: relative;">
 			<th>区块</th>
@@ -203,5 +210,6 @@
 </footer>
 </body>
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="js/main.js?v=1.0.7"></script>
+<script type="text/javascript" src="js/main.js?v=1.0.4"></script>
+<script type="text/javascript" src="js/header.js?v=1.0.6"></script>
 </html>

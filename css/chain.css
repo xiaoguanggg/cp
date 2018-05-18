@@ -263,3 +263,10 @@ p.fz span{
 .chain_addr{
 	padding:100px 1% 0;
 }
+.block-search-box{
+	position: relative;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 1%;
+    background: #f9f9f9;
+}

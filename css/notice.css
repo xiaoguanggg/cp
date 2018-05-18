@@ -51,3 +51,76 @@ section p.text_show .text_show_title {
     font-weight: bold;
     margin-left: -6px;
 }
+/*公告详情*/
+.f_wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+
+}
+.infoMod_bulletin {
+    background-color: #f9f9f9;
+    padding: 100px 150px 0;
+}
+.msgContainer {
+/*    background-color: #fff;*/
+}
+.msgContainer .breadcrumb {
+    font-size: 12px;
+    color: #333;
+    background: none;
+    padding: 12px 20px;
+    border-radius: 0.25rem;
+    list-style: none;
+    overflow: hidden;
+}
+.msgContainer .breadcrumb {
+    font-size: 12px;
+    color: #333;
+    background: none;
+    padding: 12px 20px;
+    border-radius: 0.25rem;
+    list-style: none;
+    overflow: hidden;
+}
+.page_bulletin .msgContainer .msgHd {
+    padding: 30px 0;
+    margin: 0 25px;
+    text-align: center;
+}
+.page_bulletin .msgContainer .msgHd .msgTitle {
+    font-size: 24px;
+    color: #666;
+}
+.msgContainer .msgHd .msgTime {
+    font-size: 14px;
+    color: #999;
+    margin-top: 15px;
+}
+.page_bulletin .msgContainer .msgBd {
+    padding: 0 70px 45px;
+    line-height: 1.6em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.msgContainer .msgFt {
+    max-width: 890px;
+    padding: 30px 0 55px;
+    margin: 0 auto;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+}
+.msgContainer .msgFt .nextLink {
+    display: inline-block;
+    text-align: right;
+    color: #666;
+}
+.msgContainer .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
+    content: ">";
+    display: inline-block;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #636c72;
+}
