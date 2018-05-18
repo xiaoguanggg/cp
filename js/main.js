@@ -1,39 +1,3 @@
-$(function(){
-  // 导航
-    $(document).click(function(){
-      $('.nav-list').removeClass('open')
-    })
-    $('.nav-menu,.nav-list').click(function(e){e.stopPropagation()})
-    $('nav').find('.nav-menu').click(function(e){
-      $('.nav-list').toggleClass('open')
-    })
-  // 轮播
-  var index = 0;
-  $(function() {
-    var index = 0;
-    var pic = $('.content li')
-    var cir = $('#circle li')
-    setInterval(function() {
-        begin();
-        // index += 1;
-        index++
-        if (index == 4) {
-            index = 0
-        }
-    }, 2000)
-    cir.click(function() {
-        index = $(this).index();
-        console.log(index);
-        begin()
-    })
-
-    function begin() {
-        pic.eq(index).addClass('current').siblings().removeClass('current')
-        cir.eq(index).addClass('current1').siblings().removeClass('current1')
-    }
-  })
-})
-
 
 
 // function sendRequestWithoutToken(option) {
@@ -73,6 +37,7 @@ $(function(){
 });
 // // 调试用
 // function ajaxgg(){
+//    alert("gg")
 //    $.ajax({
 //    type:"POST",
 //    url:"http://192.168.1.146/v1/chain/get_block",
@@ -80,7 +45,7 @@ $(function(){
 //            block_num_or_id: 5
 //         }),
 //    success:function(data){
-//        alert("11");
+//        alert(data);
 //        console.log(data)
 //    },
 //     error: function(error) {
@@ -119,11 +84,10 @@ function ajaxT(){
                 </ul></div>'
       }
       $("#pos-row").append(htm);
-      // createShowingUl(data);
    },
     error: function(error) {
           console.log(error); //打印服务端返回的数据(调试用)
-          alert(
+          console.log(
               "异常:" +
               (error.responseJSON && error.responseJSON.desc ?
                   error.responseJSON.desc :
@@ -215,13 +179,6 @@ function chain_detail(){
         // 区块
          var  table5 = "";
               table5 += '<table border="0" id="block-lists">\
-                            <tr class="block-tr" style="position: relative;">\
-                              <th>区块</th>\
-                              <th class="search block-search">\
-                                <img src="./img/search.svg">\
-                                <input type="text" name="search" placeholder="区块查询">\
-                              </th>\
-                            </tr>\
                             <tr class="tr-title">\
                               <th>块高度</th>\
                               <th>时间戳</th>\
@@ -244,7 +201,7 @@ function chain_detail(){
    },
     error: function(error) {
           console.log(error); //打印服务端返回的数据(调试用)
-          alert(
+          console.log(
               "异常:" +
               (error.responseJSON && error.responseJSON.desc ?
                   error.responseJSON.desc :
@@ -266,7 +223,7 @@ function ajaxgetBlock(){
    },
     error: function(error) {
           console.log(error); //打印服务端返回的数据(调试用)
-          alert(
+          console.log(
               "异常:" +
               (error.responseJSON && error.responseJSON.desc ?
                   error.responseJSON.desc :
@@ -277,129 +234,51 @@ function ajaxgetBlock(){
    })
 }
 
-function ajaxgetAccount(){
-   $.ajax({
-   type:"POST",
-   contentType: 'application/json;charset=utf-8',
-   url:"http://192.168.1.179:8888/chain/getAccount",
-   data: JSON.stringify({
-         "account" : "huobi.pro"
-        }),
-   success:function(data){
-       console.log(data);
-       var account = data.data.account;
-       var voteHistory = data.data.voteHistory;
-       console.log(account);
-       console.log(voteHistory);
-       var table6 = "";
-           table6 += ' <ul class="clearfix">\
-                          <li class="">\
-                            <img src="http://www.eosforce.io/imgs/newlogotm.png" style="width:60px;height: 60px">\
-                            <span class="fw">eos</span>\
-                          </li>\
-                          <li class="">\
-                            <span class=""><label style="margin-right:10px">链用户名 :</label>'+ account.nodeName +'</span>\
-                            <span class=""><label style="margin-right:10px">链地址 :</label>'+ account.address +'</span>\
-                          </li>\
-                        </ul>'
-       $("#chain_addr").append(table6);
-       // 投票
-       var  table7 = "";
-            table7 += '<table border="0" id="vote-lists">\
-                          <tr class="block-tr" style="position: relative;">\
-                            <th>投票历史</th>\
-                          </tr>\
-                          <tr class="tr-title">\
-                            <th>时间</th>\
-                            <th>开始抵押</th>\
-                            <th>接触抵押</th>\
-                            <th>节点投票</th>\
-                            <th>提现利息</th>\
-                            <th>币量</th>\
-                          </tr>';
-            for(var i=0;i<voteHistory.length;i++){
-
-              //console.log(item[i].name);
-
-                  table7 += '<tr class="tr-dec">\
-                    <td style="padding-left:15px">' + voteHistory[i].timestamp+ '</td>\
-                    <td>' + voteHistory[i].stakedBalance + '</td>\
-                    <td>' + voteHistory[i].stakingBalance + '</td>\
-                    <td>' + voteHistory[i].voteToken + '</td>\
-                    <td>' + voteHistory[i].profit + '</td>\
-                    <td>' + voteHistory[i].supply + '</td><tr>';
-          }
-          table7 += '</table>';
-          $("#vote-box").append(table7);
-
-        // 信息
-        var table_box = "";
-            table_box += '<table border="0">\
-                          <tr class="tr-title">\
-                            <th>用户信息</th>\
-                          </tr>\
-                          <tr class="tr-dec">\
-                            <td>用户名</td>\
-                            <td class="fw">'+ account.nodeName +'</td>\
-                            <td>用户地址</td>\
-                            <td class="fw">'+ account.address +'</td>\
-                          </tr>\
-                          </table>\
-                            <table border="0">\
-                          <tr class="tr-title">\
-                            <th>收益信息</th>\
-                          </tr>\
-                          <tr class="tr-dec">\
-                            <td>历史总收益</td>\
-                            <td class="fw">'+ account.profit +'</td>\
-                            <td>未提取收益</td>\
-                            <td class="fw" style="height:60px">'+ account.receiveProfit +'</td>\
-                          </tr>\
-                          </table>\
-                          <table border="0">\
-                          <tr class="tr-title">\
-                            <th>动态信息</th>\
-                          </tr>\
-                          <tr class="tr-dec">\
-                            <td>最新总余额</td>\
-                            <td class="fw">'+ account.balance +'</td>\
-                            <td>最新抵押币量</td>\
-                            <td class="fw" style="height:60px">'+ account.stakedBalance +'</td>\
-                          </tr>\
-                          </table>'
-         $("#user-box").append(table_box);
-   },
-    error: function(error) {
-          console.log(error); //打印服务端返回的数据(调试用)
-          alert(
-              "异常:" +
-              (error.responseJSON && error.responseJSON.desc ?
-                  error.responseJSON.desc :
-                  error.status)
-          )
-    }
-
-   })
-}
 //回车快捷区块查询查询  
 $(function(){
     $(".block-search").keypress(function (e) { 
          var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;  
-         if (keyCode == 13){  
-                alert("响应键盘的enter事件"); 
-                ajaxgetBlock()
-          }  
-    }); 
+          if (keyCode == 13){  
+              var blockkeyword = $("#block-search").val();
+              if(blockkeyword == ""){
+                alert("不能为空")
+              }else{
+                   alert(blockkeyword);
+                   console.log(blockkeyword);
+                   var blockkeyword = $.trim(blockkeyword);
+                   // window.location.href = 'index.html' + "?" +blockkeyword;
+                   ajaxgetBlock()
+              }
+          }
+    })
   })
-// 查询用户
+// 查询用户 ajaxgetBlock()
 $(function(){
     $(".addr-search").keypress(function (e) { 
          var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;  
-         if (keyCode == 13){  
-              alert("响应键盘的enter事件");
-              window.location.href = "/cp/node.html";
-              window.reload();
-              ajaxgetAccount()
-          }  
-    }); 
+          if (keyCode == 13){  
+              var addrkeyword = $("#addrkeyword").val();
+              if(addrkeyword == ""){
+                alert("不能为空")
+              }else{
+                   alert(addrkeyword);
+                   var addrkeyword = $.trim(addrkeyword);
+                   window.location.href = 'node.html' + "?" +addrkeyword;
+              }
+          }
+    })
   })
+// // 跳转
+// function searchurl(){
+//      var addrkeyword = $("#addrkeyword").val();
+//      var account = data.data.account;
+//       $.each(account,function(i){
+//           //alert(this.name);
+//           if(addrkeyword == this.address||addrkeyword == this.nodeName){
+//             alert("成功");
+//             window.location.href = "/cp/node.html";
+//             window.reload();
+//             ajaxgetAccount()
+//           }
+//       })
+// }
