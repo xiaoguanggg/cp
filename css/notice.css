@@ -124,3 +124,8 @@ section p.text_show .text_show_title {
     padding-left: 0.5rem;
     color: #636c72;
 }
+@media(max-width:1200px){
+  .infoMod_bulletin{
+  	padding:100px 15px;
+  }
+}

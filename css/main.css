@@ -49,7 +49,7 @@
 }
 
 /*pos*/
-.pos,.server,.notice,.skills{
+.pos,.server,.notice,.skills,.team{
   padding:6em 0;
 }
 .title {
@@ -165,8 +165,135 @@ p {
   transform: scale(1);
   opacity: 1;
 }
-@media(max-width:1024px){
 
+.pos-row ul{
+  box-shadow: 0 0 3px 2px rgba(0,0,0,.05);
+  border-radius: 10px
+}
+
+.pos-row ul li{
+  float: left;
+  width: 11.11%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 120px;
+  line-height: 60px
+}
+
+.pos-row ul li img{
+  width: 50px;
+  height: 50px;
+}
+
+.pos-row ul li span{
+   display: block;
+}
+
+#server .server-list{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#notice .notice-box  li{
+   border-bottom: 1px solid #f9f9f9;
+   margin-bottom: 20px;
+}
+
+/*--team--*/
+img.img-responsive {
+    width: 100%;
+}
+.team-grids {
+    overflow: hidden;
+}
+.captn {
+    background: #FE7200;
+    padding: 2em;
+}
+.captn h4 {
+    font-size: 2em;
+    color: #fff;
+}
+.captn p {
+    margin: 0.3em 0 .8em;
+    color: #E6D1D1;
+}
+.captn {
+  background: #ff7200;
+  padding: 2em;
+  position: absolute;
+  left: 10%;
+  bottom: -70%;
+  -webkit-transition:.5s all;
+  transition:.5s all;
+  -moz-transition:.5s all;
+}
+.team-grids:hover .captn{
+  bottom: 24%;
+}
+/*--social-icons--*/
+.social-icons ul{
+  display:inline-block;
+  padding: 0;
+}
+.social-icons ul li {
+    position: inherit;
+    display: inline-block;
+    width: inherit;
+}
+.social-icons ul li:nth-child(2) {
+    margin: 0 .5em;
+}
+.social-icons ul li:nth-child(3) {
+    margin-right: 0.5em;
+}
+.social-icons ul li a {
+    background: url(../images/social-icons.png) no-repeat 0px 0px;
+    display: block;
+    height: 35px;
+    width: 35px;
+    border: 1px solid #fff;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+    -moz-transition: .5s all;
+}
+.social-icons ul li a:hover {
+    background-color: #000;
+}
+.social-icons ul li a.fb{
+  background-position:0px -41px;
+}
+.social-icons ul li a.gp {
+    background-position: 1px -81px;
+}
+.social-icons ul li a.drb {
+    background-position: 0px -121px;
+}
+.team-grids{
+   position: relative;
+}
+/*--//team--*/
+img.img-responsive {
+    width: 100%;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+}
+
+@media(max-width:1024px){
+#server .server-list{
+  display: inherit;
+  width: 50%;
+ float: left;
+}
 .title h3 {
     width: 23%;
     font-size: 3.2em;
@@ -203,13 +330,28 @@ p {
 .pos-grids h6 {
     margin: 1em auto 0;
 }
+.captn h4 {
+    font-size: 1.5em;
+}
+.team-grids {
+    width: 49%;
+    float: left;
+    margin: 1em auto;
+    padding: 0 2em;
+}
+.team-grids:hover .captn {
+    bottom: 27%;
+}
+.captn {
+    left: 23%;
+}
 }
 @media(max-width:900px){
 
 .pos, .team, .contact, .skills {
     padding: 3em 0;
 }
-}
+
 }
 @media(max-width:800px){
 
@@ -260,7 +402,20 @@ p {
 }
 }
 @media(max-width:480px){
-
+.team-grids {
+    width: 50%;
+    margin: 0.5em auto;
+    padding: 0 0.5em;
+}
+.social-icons ul li:nth-child(2),.social-icons ul li:nth-child(3){
+    margin: 0;
+}
+.captn {
+    left: 9%;
+}
+.team-grids:hover .captn {
+    bottom: 20%;
+}
 .title h3 {
     width: 37%;
 }
@@ -273,7 +428,16 @@ p {
 
 }
 @media(max-width:414px){
-
+.team-grids {
+    width: 70%;
+    float: none;
+}
+.captn {
+    left: 14%;
+}
+.team-grids:hover .captn {
+    bottom: 25%;
+}
 .title h3 {
     width: 45%;
     font-size: 2.3em;
@@ -298,9 +462,15 @@ p {
 
 }
 @media(max-width:375px){ 
-
+  .team-grids {
+    width: 80%;
+}
 }
 @media(max-width:320px){
+  .team-grids {
+    width: 90%;
+    padding: 0;
+ }
 .about, .team, .contact, .skills {
     padding: 1.5em 0;
 }
@@ -323,39 +493,4 @@ p {
     margin-top: 1.5em;
 }
 
-}
-
-.pos-row ul{
-  box-shadow: 0 0 3px 2px rgba(0,0,0,.05);
-  border-radius: 10px
-}
-
-.pos-row ul li{
-  float: left;
-  width: 11.11%;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  height: 120px;
-  line-height: 60px
-}
-
-.pos-row ul li img{
-  width: 50px;
-  height: 50px;
-}
-
-.pos-row ul li span{
-   display: block;
-}
-
-#server .server-list{
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-#notice .notice-box  li{
-   border-bottom: 1px solid #f9f9f9;
-   margin-bottom: 20px;
 }
